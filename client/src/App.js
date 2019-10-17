@@ -1,11 +1,16 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
 import Certificates from './Components/Certificates';
 
-function App() {  
+function App() {
   return (
     <div className="App">
-      <Certificates></Certificates>
+      <Router>
+        <Switch>
+          <Route path="/" exact component={Certificates} />
+        </Switch>
+      </Router>
     </div>
   );
 }

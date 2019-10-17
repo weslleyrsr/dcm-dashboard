@@ -1,31 +1,44 @@
 import React, { useState, useEffect } from 'react';
-import Cards from './../Cards';
-import Grid from '@material-ui/core/Grid';
 import axios from 'axios';
+import Search from './Search';
+import CertificatesGrid from './CertificatesGrid'
 
 function Certificates() {
-    const [certificates, setCertificates] = useState()
+    const [certificates, setCertificates] = useState();
+    const [filteredCertificates, setFilteredCertificates] = useState();
+
+    const fetchCertificates = async (year) => {
+        const { data } = await axios.get('/api/certificados');
+        console.log(data);
+        if(data){
+            setCertificates(data);
+            setFilteredCertificates(data);
+        }
+    };
+
+    // const filterByDays = async (days) => {
+    //     // TODO - Filtrar certificados que expiram em X dias
+    // };
+
+    const filterByName = async (param) => {
+        setFilteredCertificates(
+            certificates.filter(
+                certificate => certificate.name.toUpperCase().includes(
+                    param.target.value.toUpperCase()
+                )
+            )
+        );
+    };
 
     useEffect(() => {
-        const fetchData = async () => {
-            const response = await axios.get('/api/certificados');
-            console.log(response);
-            response.data && setCertificates(response.data);
-        };
-
-        fetchData();
+        fetchCertificates();
     }, []);
 
     return (
         <div>
-            <center><h1>Certificates List</h1></center>
-            <Grid container spacing={3}>
-                {certificates && certificates.map((certificate) => (
-                    <Grid item xs={12} sm={6} lg={3}>
-                        <Cards certificate={certificate}></Cards>
-                    </Grid>
-                ))}
-            </Grid>
+            <Search filterByName={filterByName}></Search>
+
+            <CertificatesGrid certificates={filteredCertificates}></CertificatesGrid>
         </div>
     );
 }
