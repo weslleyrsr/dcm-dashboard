@@ -11,9 +11,9 @@ function Certificates(props) {
 
     return (
         <div>
-            <Grid container spacing={3}>
+            <Grid container spacing={2}>
                 {certificates && certificates.map((certificate, index) => (
-                    <Grid item xs={12} sm={6} lg={2} key={index}>
+                    <Grid item xs={12} sm={6} lg={3} key={index}>
                         <Cards certificate={certificate} id={index}></Cards>
                     </Grid>
                 ))}

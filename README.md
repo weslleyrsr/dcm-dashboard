@@ -19,3 +19,5 @@ Pre requisitos: NodeJS 10.16.3 > & NPM > 6.11.3
 7° passo -> ``` $ npm run dev ```
 
 8° passo -> entrar no link http://localhost:3000/
+
+OBS: Para as chamadas de API funcionarem é necessário adicionar um arquivo .env na raiz do projeto com API_KEY e API_CRN.
