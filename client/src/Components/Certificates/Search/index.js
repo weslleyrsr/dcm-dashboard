@@ -11,6 +11,7 @@ const useStyles = makeStyles({
     display: 'flex',
     alignItems: 'center',
     width: '100%',
+    borderRadius: '50px',
   },
   input: {
     marginLeft: 8,
@@ -25,11 +26,12 @@ const useStyles = makeStyles({
     margin: 4,
   },
   wrap: {
-    maxWidth: '700px',
+    maxWidth: '800px',
     padding: 10,
     paddingRight: 20,
     textAlign: 'center',
     margin: '0 auto',
+    marginBottom: '50px',
   }
 });
 
@@ -47,8 +49,8 @@ export default function Searchbar(props) {
         <InputBase
           className={classes.input}
           onChange={props.filterByName}
-          placeholder="Buscar certificado"
-          inputProps={{ 'aria-label': 'Buscar certificado' }}
+          placeholder='Find certificate'
+          inputProps={{ 'aria-label': 'Find certificate' }}
         />
       </Paper>
     </div>

@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Search from './Search';
-import CertificatesGrid from './CertificatesGrid'
+import ExpiresIn from './ExpiresIn';
+import Grid from '@material-ui/core/Grid';
+import CertificatesGrid from './CertificatesGrid';
 
 function Certificates() {
     const [certificates, setCertificates] = useState();
@@ -16,9 +18,26 @@ function Certificates() {
         }
     };
 
-    // const filterByDays = async (days) => {
-    //     // TODO - Filtrar certificados que expiram em X dias
-    // };
+    const filterByDays = async (param) => {
+        if (!param.currentTarget.value || param.currentTarget.value === '') {
+            setFilteredCertificates(certificates);
+            return;
+        }
+
+        let hoje = new Date();
+        let dias = parseInt(hoje.getDate()) + parseInt(param.currentTarget.value);
+
+        let dataFiltro = new Date();
+        dataFiltro.setDate(dias);
+
+        const dataEpoch = dataFiltro.getTime();
+
+        setFilteredCertificates(
+            certificates.filter(
+                certificate => certificate.expires_on <= dataEpoch
+            )
+        );
+    };
 
     const filterByName = async (param) => {
         setFilteredCertificates(
@@ -36,7 +55,17 @@ function Certificates() {
 
     return (
         <div>
-            <Search filterByName={filterByName}></Search>
+            <Grid container spacing={2}>
+                <Grid item xs={12} sm={6} lg={4}>
+                    <ExpiresIn filterByDays={filterByDays}></ExpiresIn>
+                </Grid>
+
+                <Grid item xs={12} sm={6} lg={8}>
+                    <Search filterByName={filterByName}></Search>
+                </Grid>
+
+                {/* <Grid item xs={12} sm={6} lg={3}></Grid> */}
+            </Grid>
 
             <CertificatesGrid certificates={filteredCertificates}></CertificatesGrid>
         </div>
