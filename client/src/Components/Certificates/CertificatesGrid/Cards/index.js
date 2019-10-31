@@ -1,9 +1,9 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
-// import CardActions from '@material-ui/core/CardActions';
+import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-// import Button from '@material-ui/core/Button';
+import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles({
@@ -20,7 +20,12 @@ const useStyles = makeStyles({
         fontSize: '0.7rem',
     },
     teste: {
-        minHeight: '100px',
+        minHeight: 100,
+        paddingBottom: 0,
+        backgroundColor: '#5ecc66',
+        '&last-child': {
+            paddingBottom: 0,
+        }
     },
 });
 
@@ -52,16 +57,13 @@ export default function SimpleCard(data) {
                 <Typography className={classes.pos} color="textSecondary">
                     {certificate.domains[0]}
                 </Typography>
-
-                { /* ISSUER */ }
-                {/* <Typography variant="body2" component="p">
-                    {certificate.issuer}
-                </Typography> */}
             </CardContent>
-{/* 
+ 
             <CardActions>
-                <Button size="small">Mais informações</Button>
-            </CardActions> */}
+                <Button size="small">
+                    Learn More
+                </Button>
+            </CardActions>
         </Card>
     );
 }

@@ -3,7 +3,8 @@ import axios from 'axios';
 import Search from './Search';
 import ExpiresIn from './ExpiresIn';
 import Grid from '@material-ui/core/Grid';
-import CertificatesGrid from './CertificatesGrid';
+// import CertificatesGrid from './CertificatesGrid';
+import CertificatesFalconGrid from './CertificatesFalconGrid';
 
 function Certificates() {
     const [certificates, setCertificates] = useState();
@@ -11,7 +12,6 @@ function Certificates() {
 
     const fetchCertificates = async (year) => {
         const { data } = await axios.get('/api/certificados');
-        console.log(data);
         if(data){
             setCertificates(data);
             setFilteredCertificates(data);
@@ -63,11 +63,10 @@ function Certificates() {
                 <Grid item xs={12} sm={6} lg={8}>
                     <Search filterByName={filterByName}></Search>
                 </Grid>
-
-                {/* <Grid item xs={12} sm={6} lg={3}></Grid> */}
             </Grid>
 
-            <CertificatesGrid certificates={filteredCertificates}></CertificatesGrid>
+            {/* <CertificatesGrid certificates={filteredCertificates}></CertificatesGrid> */}
+            <CertificatesFalconGrid certificates={filteredCertificates}></CertificatesFalconGrid>
         </div>
     );
 }

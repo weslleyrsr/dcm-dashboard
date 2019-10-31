@@ -25,8 +25,11 @@ const useStyles = makeStyles({
   amarelo: {
       color: '#fdff81',
   },
-  verde : {
+  verde: {
       color: '#2cff46',
+  },
+  indigo: {
+    color: '#e8eaf6'
   }
 });
 
@@ -39,7 +42,7 @@ export default function ExpiresIn(props) {
             <Button onClick={props.filterByDays} value={113}> <span className={classes.bullet + ' ' + classes.vermelho}>•</span> 30</Button>
             <Button onClick={props.filterByDays} value={197}> <span className={classes.bullet + ' ' + classes.amarelo}>•</span> 60</Button>
             <Button onClick={props.filterByDays} value={300}> <span className={classes.bullet + ' ' + classes.verde}>•</span> 90</Button>
-            <Button onClick={props.filterByDays} value={''}> <span className={classes.bullet}>•</span> ALL</Button>
+            <Button onClick={props.filterByDays} value={''}> <span className={classes.bullet + ' ' + classes.indigo}>•</span> ALL</Button>
         </ButtonGroup>
     </div>
   );
