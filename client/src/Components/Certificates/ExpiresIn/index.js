@@ -39,9 +39,9 @@ export default function ExpiresIn(props) {
   return (
     <div className={classes.wrap}>
         <ButtonGroup aria-label="outlined primary button group">
-            <Button onClick={props.filterByDays} value={113}> <span className={classes.bullet + ' ' + classes.vermelho}>•</span> 30</Button>
-            <Button onClick={props.filterByDays} value={197}> <span className={classes.bullet + ' ' + classes.amarelo}>•</span> 60</Button>
-            <Button onClick={props.filterByDays} value={300}> <span className={classes.bullet + ' ' + classes.verde}>•</span> 90</Button>
+            <Button onClick={props.filterByDays} value={30}> <span className={classes.bullet + ' ' + classes.vermelho}>•</span> 30</Button>
+            <Button onClick={props.filterByDays} value={60}> <span className={classes.bullet + ' ' + classes.amarelo}>•</span> 60</Button>
+            <Button onClick={props.filterByDays} value={90}> <span className={classes.bullet + ' ' + classes.verde}>•</span> 90</Button>
             <Button onClick={props.filterByDays} value={''}> <span className={classes.bullet + ' ' + classes.indigo}>•</span> ALL</Button>
         </ButtonGroup>
     </div>

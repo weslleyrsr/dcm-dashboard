@@ -64,9 +64,9 @@ export default function CustomizedButtons(props) {
     const classes = useStyles();
 
     let hoje = new Date();
-    let dias30 = parseInt(hoje.getDate()) + parseInt(113);
-    let dias60 = parseInt(hoje.getDate()) + parseInt(197);
-    let dias90 = parseInt(hoje.getDate()) + parseInt(300);
+    let dias30 = parseInt(hoje.getDate()) + parseInt(30);
+    let dias60 = parseInt(hoje.getDate()) + parseInt(60);
+    let dias90 = parseInt(hoje.getDate()) + parseInt(90);
 
     let dt30dias = new Date();
     dt30dias.setDate(dias30);
