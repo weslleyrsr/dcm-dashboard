@@ -16,8 +16,12 @@ Pre requisitos: NodeJS 10.16.3 > & NPM > 6.11.3
 
 6° passo -> $ voltar no diretorio dcm-dashboard
 
-7° passo -> ``` $ npm run dev ```
+7° passo -> criar diretório Config na raiz, dentro dele o arquivo 'database.config.js'
 
-8° passo -> entrar no link http://localhost:3000/
+8° passo -> dentro do arquivo exportar URL ( module.exports = { url: 'mongodb://localhost:27017/easy-notes' } )
+
+9° passo -> ``` $ npm run dev ```
+
+10° passo -> entrar no link http://localhost:3000/
 
 OBS: Para as chamadas de API funcionarem é necessário adicionar um arquivo .env na raiz do projeto com API_KEY e API_CRN.
