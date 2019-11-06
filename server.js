@@ -2,14 +2,14 @@ const express = require('express');
 const axios = require('axios');
 const dotenv = require('dotenv');
 dotenv.config(); // Config .env
-const { getCertificados, getIAM } = require('./apiv2');
+const { getCertificates, getIAM } = require('./apiv2');
 
 const app = express();
 const port = process.env.PORT || 5000;
 
-app.get('/api/certificados', async (req, res) => {
-  getCertificados().then(certificados => {
-    res.send(certificados)
+app.get('/api/certificates', async (req, res) => {
+  getCertificates().then(certificates => {
+    res.send(certificates)
   })
     .catch(error => {
       console.log(error)

@@ -24,7 +24,7 @@ const getDcmInstance = async (authorization) => {
     });
 }
 
-const getCertificados = async () => {
+const getCertificates = async () => {
     // const instance = await getIAM().then( authorization => getDcmInstance(authorization) )
 
     const authorization = await getIAM()
@@ -36,6 +36,6 @@ const getCertificados = async () => {
 }
 
 module.exports = { 
-    getCertificados,
+    getCertificates,
     getIAM
 };

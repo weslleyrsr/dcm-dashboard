@@ -11,7 +11,7 @@ function Certificates() {
     const [filteredCertificates, setFilteredCertificates] = useState();
 
     const fetchCertificates = async (year) => {
-        const { data } = await axios.get('/api/certificados');
+        const { data } = await axios.get('/api/certificates');
         if(data){
             setCertificates(data);
             setFilteredCertificates(data);

@@ -1,23 +1,25 @@
 # dcm-dashboard
 Dashboard para a ferramenta Digital Certificate Manager da IBM
 
+![Dashboard main screen](https://i.imgur.com/Wu5CD1J.png)
+
 ## Instalação
-Pre requisitos: NodeJS 10.16.3 > & NPM > 6.11.3
+Requisites: NodeJS 10.16.3 > & NPM > 6.11.3
 
-1° passo -> clonar este repositorio. ``` $ git clone https://github.com/H0tz/dcm-dashboard.git  ```
+Step 1 -> Clone this repository. ``` $ git clone https://github.com/H0tz/dcm-dashboard.git  ```
 
-2° passo -> entrar no diretorio criado (dcm-dashboard)
+Step 2 -> Open the created directory (dcm-dashboard) ``` $ cd dcm-dashboard ```
 
-3° passo -> ``` $ npm install ```
+Step 3 -> Run ``` $ npm install ```
 
-4° passo -> entrar no diretorio /client
+Step 4 -> Open client directory (/client) ``` $ cd client ```
 
-5° passo -> $ ``` npm install ```
+Step 5 -> Run ``` $ npm install ```
 
-6° passo -> $ voltar no diretorio dcm-dashboard
+Step 6 -> Get back on the main directory (dcm-dashboard) ``` $ cd .. ```
 
-7° passo -> ``` $ npm run dev ```
+Step 7 -> Run ``` $ npm run dev ```
 
-8° passo -> entrar no link http://localhost:3000/
+Step 8 -> Go to http://localhost:3000/ in your browser. (when initialization finish, the script will open for you)
 
-OBS: Para as chamadas de API funcionarem é necessário adicionar um arquivo .env na raiz do projeto com API_KEY e API_CRN.
+NOTE: In order to your API calls work, you need to create a .env file at project's root and put your DCM's API_KEY and API_CRN.
