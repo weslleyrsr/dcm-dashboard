@@ -57,8 +57,7 @@ const theme = createMuiTheme({
       // Tell Material-UI what the font-size on the html element is.
       fontSize:9.5,
     },
-  });
-  
+});
 
 export default function CustomizedButtons(props) {
     const classes = useStyles();
@@ -77,36 +76,36 @@ export default function CustomizedButtons(props) {
     let dt90dias = new Date();
     dt90dias.setDate(dias90);
 
-    if(props.expiresOn < dt30dias.getTime()){
+    if(props.certificate.expires_on < dt30dias.getTime()){
         return (
-            <RedButton variant="contained" color="primary" className={classes.margin}>
+            <RedButton variant="contained" color="primary" className={classes.margin} value={props.index} onClick={props.handleOpen}>
                 <ThemeProvider theme={theme}>
-                    <Typography align='left' noWrap={Boolean(true)} > {props.certificateName} </Typography>
+                    <Typography align='left' noWrap={Boolean(true)} > {props.certificate.name} </Typography>
                 </ThemeProvider>
             </RedButton>
             
         );
-    } else if(props.expiresOn < dt60dias.getTime()){
+    } else if(props.certificate.expires_on < dt60dias.getTime()){
         return (
-            <YellowButton variant="contained" color="primary" className={classes.margin}>
+            <YellowButton variant="contained" color="primary" className={classes.margin} value={props.index} onClick={props.handleOpen}>
                 <ThemeProvider theme={theme}>
-                    <Typography align='left' noWrap={Boolean(true)} > {props.certificateName} </Typography>
+                    <Typography align='left' noWrap={Boolean(true)} > {props.certificate.name} </Typography>
                 </ThemeProvider>
             </YellowButton>
         );
-    } else if(props.expiresOn < dt90dias.getTime()){
+    } else if(props.certificate.expires_on < dt90dias.getTime()){
         return (
-            <GreenButton variant="contained" color="primary" className={classes.margin}>
+            <GreenButton variant="contained" color="primary" className={classes.margin} value={props.index} onClick={props.handleOpen}>
                 <ThemeProvider theme={theme}>
-                    <Typography align='left' noWrap={Boolean(true)} > {props.certificateName} </Typography>
+                    <Typography align='left' noWrap={Boolean(true)} > {props.certificate.name} </Typography>
                 </ThemeProvider>
             </GreenButton>
         );
     } else {
         return (
-            <IndigoButton variant="contained" color="primary" className={classes.margin}>
+            <IndigoButton variant="contained" color="primary" className={classes.margin} value={props.index} onClick={props.handleOpen}>
                <ThemeProvider theme={theme}>
-                    <Typography align='left' noWrap={Boolean(true)} > {props.certificateName} </Typography>
+                    <Typography align='left' noWrap={Boolean(true)} > {props.certificate.name} </Typography>
                 </ThemeProvider>
             </IndigoButton>
         );
