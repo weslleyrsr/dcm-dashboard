@@ -76,8 +76,6 @@ function Certificates(props) {
                             index={index}
                             handleOpen={handleOpen}
                         ></Button>
-
-                        {/* <Cards certificate={certificate} id={index}></Cards> */}
                     </Grid>
                 ))}
             </Grid>
